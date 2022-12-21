@@ -1,0 +1,210 @@
+#include<iostream>
+
+#define INVOICE_H
+
+#include<string>
+class Invoice {
+public:
+    Invoice(std::string part, std::string type, int quantity, int price);
+        void setPart(std::string value);
+        std::string getPart() const;
+        void setType(std::string value);
+        std::string getType() const;
+
+        void setQuantity(int value);
+        int getQuantity() const;
+        void setPrice(int value);
+        int getPrice() const;
+        int getInvoiceAmount();
+       // std::string toString() const;
+
+private:
+    std::string partNumber;
+    std::string partType;
+    int partQuantity;
+    int partPrice;
+   
+
+};
+
+#include"Invoice.h";
+#include<iostream>;
+#include<string>;
+
+
+Invoice::Invoice(std::string part, std::string type, int quantity, int price)
+{
+	if (quantity >= 0)
+	{
+		partQuantity = quantity;
+	}
+	if (price >= 0)
+	{
+		partPrice = price;
+	}
+}
+	void Invoice::setPart(std::string value)
+	{
+		partNumber = value;
+	}
+	std::string Invoice :: getPart() const 
+	{
+		return partNumber;
+	}
+	void Invoice::setType(std::string value)
+	{
+		partType = value;
+	}
+	std::string Invoice::getType() const
+	{
+		return partType;
+	}
+	void Invoice::setQuantity(int value)
+	{
+		if (value > 0)
+		{
+			partQuantity = value;
+		}
+		else
+		{
+			partQuantity = 0;
+		}
+	}
+	int Invoice::getQuantity() const
+	{
+		return partQuantity;
+	}
+	void Invoice::setPrice(int value)
+	{
+		if (value > 0)
+		{
+			partPrice = 0;
+		}
+		else
+		{
+			partPrice = value;
+		}
+	}
+	int Invoice::getPrice() const
+	{
+		return partPrice;
+	}
+	int Invoice::getInvoiceAmount()
+	{
+		int value = getQuantity() * getPrice();
+		return value;
+	}
+  
+  
+  #include"Invoice.h";
+#include<iostream>;
+#include<string>;
+
+
+Invoice::Invoice(std::string part, std::string type, int quantity, int price)
+{
+	if (quantity >= 0)
+	{
+		partQuantity = quantity;
+	}
+	if (price >= 0)
+	{
+		partPrice = price;
+	}
+}
+	void Invoice::setPart(std::string value)
+	{
+		partNumber = value;
+	}
+	std::string Invoice :: getPart() const 
+	{
+		return partNumber;
+	}
+	void Invoice::setType(std::string value)
+	{
+		partType = value;
+	}
+	std::string Invoice::getType() const
+	{
+		return partType;
+	}
+	void Invoice::setQuantity(int value)
+	{
+		if (value > 0)
+		{
+			partQuantity = value;
+		}
+		else
+		{
+			partQuantity = 0;
+		}
+	}
+	int Invoice::getQuantity() const
+	{
+		return partQuantity;
+	}
+	void Invoice::setPrice(int value)
+	{
+		if (value > 0)
+		{
+			partPrice = 0;
+		}
+		else
+		{
+			partPrice = value;
+		}
+	}
+	int Invoice::getPrice() const
+	{
+		return partPrice;
+	}
+	int Invoice::getInvoiceAmount()
+	{
+		int value = getQuantity() * getPrice();
+		return value;
+	}
+  
+  
+  #include<iostream>
+#include "Invoice.h"
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    string partDescription,partNumber;
+
+    Invoice invoice1("0001", "woop", 10, 2);
+    cout << "The Initial part number is " << invoice1.getPart() << endl;
+    cout << "The Initial part description is " << invoice1.getType() << endl;
+    cout << "The Initial quantity of requested part is" << invoice1.getQuantity() << endl;
+    cout << "The Initial price f the requested part is " << invoice1.getPrice() << endl;
+    cout << "The current invoice cost is " << invoice1.getInvoiceAmount() << endl;
+
+   
+    cout << endl << endl << "Enter a new Part number ";
+    cin.ignore(1, '\n');
+
+    getline(cin, partDescription);
+    invoice1.setPart(partNumber);
+    string partDescription;
+    cout << "Enter a new part description: ";
+    int partQuantity;
+    cout << "Enter the New desired quantity: ";
+    cin >> partQuantity;
+    invoice1.setQuantity(partQuantity);
+    int partPrice;
+    cout << "Enter the new price: ";
+    cin >> partPrice;
+    invoice1.setPrice(partPrice);
+
+
+    cout << endl << endl << "The new part number is " << invoice1.getPart() << endl;
+    cout << "The new part description is " << invoice1.getType() << endl;
+    cout << "The new quantity of requested part is" << invoice1.getQuantity() << endl;
+    cout << "The new price f the requested part is " << invoice1.getPrice() << endl;
+    cout << "The new invoice cost is " << invoice1.getInvoiceAmount() << endl;
+
+    return 0;
+}
