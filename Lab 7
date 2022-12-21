@@ -1,0 +1,39 @@
+#include<iostream>
+#include<string>
+
+
+using namespace std;
+int main()
+{
+    string inputString;
+    string word1, word2;
+    string str1 = ",";
+    unsigned int i = 0;
+
+    while (inputString != "q")
+    {
+   
+    cout << "Enter input string:";
+    getline(cin, inputString);
+    cout << endl;
+
+    size_t found = inputString.find(str1);
+    if (found != string::npos)
+    {
+        cout << inputString;
+    }
+    for(i ==  0; i < word1.size(); i++)
+    {
+        if (!isspace(word1.at(i))
+        {
+            cout << word1.at(i);
+        }
+    }
+
+    if (inputString == "quit")
+    {
+        return 0;
+    }
+         
+    return 0;
+}
